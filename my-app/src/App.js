@@ -8,7 +8,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Cool beans jarra!<code>src/App.js</code> and save to reload.
+          Cool beans jarra!<code>src/App.js</code> and save to reload
+          lkdfjgdfgkljfddfgdgfdlgfglgj.
         </p>
         <a
           className="App-link"
