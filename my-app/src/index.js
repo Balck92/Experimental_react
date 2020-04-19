@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import reducer from './reducers';
 import rootSaga from './sagas';
 import CustomButton from './components/CustomButton';
+import NavigationBar from './components/NavigationBar';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,6 +17,8 @@ const action = (type) => store.dispatch({ type });
 function render() {
     ReactDOM.render(
         <div>
+            <NavigationBar className="NavigationBar">
+            </NavigationBar>
             <CustomButton
                 value={store.getState()}
                 onIncrement={() => action("INCREMENT")}
@@ -23,7 +26,8 @@ function render() {
                 onIncrementAsync={() => action("INCREMENT_ASYNC")}
                 onDecrementAsync={() => action("DECREMENT_ASYNC")}
             ></CustomButton>
-        </div>
+
+        </div >
         , document.getElementById('root'));
 }
 
