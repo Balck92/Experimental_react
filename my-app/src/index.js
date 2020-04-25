@@ -7,9 +7,11 @@ import createSagaMiddleware from 'redux-saga';
 import reducer from './reducers';
 import rootSaga from './sagas';
 import CustomButton from './components/CustomButton';
-import NavigationBar from './components/NavigationBar';
+import AdvancedCardPanel from './components/AdvancedCardPanel';
+
 
 const sagaMiddleware = createSagaMiddleware();
+
 
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
@@ -17,8 +19,7 @@ const action = (type) => store.dispatch({ type });
 function render() {
     ReactDOM.render(
         <div>
-            <NavigationBar className="NavigationBar">
-            </NavigationBar>
+            <AdvancedCardPanel></AdvancedCardPanel>
             <CustomButton
                 value={store.getState()}
                 onIncrement={() => action("INCREMENT")}

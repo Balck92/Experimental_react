@@ -1,8 +1,14 @@
 import { put, takeEvery, all, call } from "redux-saga/effects";
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-export function* helloSaga() {
+var Feed = require('rss-to-json');
+
+
+export function helloSaga() {
     console.log("Hello Sagas!");
+    Feed.load('https://cors-anywhere.herokuapp.com//https://www.dn.se/rss', function (err, rss) {
+        console.log("the rss", rss);
+    });
 }
 export function* incrementAsync() {
     //use the call Effect
